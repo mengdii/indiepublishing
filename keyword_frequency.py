@@ -1,0 +1,102 @@
+
+
+import matplotlib.pyplot as plt
+
+def keyword_frequency(keyword: str):
+
+    year = ""
+    count = 0  # keyword count in each publication
+    frequency = {} # keyword frequencies by year
+    line_kw = []
+    dict_lines = {} # put multiple keyword frequencies in a dictionary
+
+
+    with open("catalog_data.txt") as new_file:
+        for line in new_file: # each line is a book
+            line = line.lower()
+            parts = line.split(" ")
+            for part in parts:
+                #if part == keyword:
+                if part.startswith(keyword) == True:
+                    count += 1
+                year = parts[0]
+            if year not in frequency:
+                frequency[year] = count
+            elif year == "1000":
+                frequency[year] = count
+            else:
+                frequency[year] = frequency[year] + count # put keyword frequency by year in a dictionary
+            count = 0
+
+    count1 = 0
+    count2 = 0
+    count3 = 0
+    count4 = 0
+    count5 = 0
+    count6 = 0
+    count7 = 0
+    count8 = 0
+    count9 = 0
+    count10 = 0
+    count11 = 0
+
+    for key, value in frequency.items():
+
+        if key == "2015":
+            count1 += value / 20
+        elif key == "2016":
+            count2 += value / 11
+        elif key == "2017":
+            count3 += value / 37
+        elif key == "2018":
+            count4 += value / 34
+        elif key == "2019":
+            count5 += value / 69
+        elif key == "2020":
+            count6 += value / 59
+        elif key == "2021":
+            count7 += value / 102
+        elif key == "2022":
+            count8 += value / 128
+        elif key == "2023":
+            count9 += value / 136
+        elif key == "2024":
+            count10 += value / 227
+        elif key == "2025":
+            count11 += value / 211
+
+
+    line_kw.append(count1)
+    line_kw.append(count2)
+    line_kw.append(count3)
+    line_kw.append(count4)
+    line_kw.append(count5)
+    line_kw.append(count6)
+    line_kw.append(count7)
+    line_kw.append(count8)
+    line_kw.append(count9)
+    line_kw.append(count10)
+    line_kw.append(count11)
+
+    return line_kw
+
+
+
+dict_lines = {
+
+
+    'pandemic': keyword_frequency("pandemic"),
+    'covid': keyword_frequency("covid"),
+    'lockdown': keyword_frequency("lockdown"),
+    'quarantine': keyword_frequency("quarantine")
+
+    #'palestine': keyword_frequency("Palestine"),
+    #'gaza': keyword_frequency("Gaza"),
+    #'genocide': keyword_frequency("genocide")
+}
+
+for years, frequencies in dict_lines.items():
+    plt.plot(["2015","2016","2017","2018","2019","2020","2021","2022","2023","2024","2025"], frequencies, '.-', label=years)
+
+plt.legend()
+plt.show()
