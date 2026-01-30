@@ -1,3 +1,4 @@
+# Unify spellings by converting words in British English to American English
 
 import re
 
