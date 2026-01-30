@@ -1,4 +1,4 @@
-# Generate work clouds based on the top 50 frequent words of each region
+# Generate word clouds based on top 50 frequent words of each region
 
 ! pip install wordcloud pandas matplotlib
 
