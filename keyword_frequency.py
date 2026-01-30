@@ -1,3 +1,4 @@
+# Find out how keyword frequencies changed over time
 
 import matplotlib.pyplot as plt
 
@@ -21,7 +22,7 @@ def keyword_frequency(keyword: str):
             if year not in frequency:
                 frequency[year] = count
             elif year == "1000":
-                frequency[year] = count # When year is unavailable
+                frequency[year] = count # When publication year is unavailable
             else:
                 frequency[year] = frequency[year] + count 
             count = 0
