@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 def keyword_frequency(keyword: str):
 
     year = ""
-    count = 0  # keyword count in each publication
-    frequency = {} # keyword frequencies by year
+    count = 0 
+    frequency = {} 
     line_kw = []
-    dict_lines = {} # put multiple keyword frequencies in a dictionary
+    dict_lines = {} 
 
-
+    # Keyword frequency by year
     with open("catalog_data.txt") as new_file:
         for line in new_file: 
             line = line.lower()
@@ -21,7 +21,7 @@ def keyword_frequency(keyword: str):
             if year not in frequency:
                 frequency[year] = count
             elif year == "1000":
-                frequency[year] = count
+                frequency[year] = count # When year is unavailable
             else:
                 frequency[year] = frequency[year] + count 
             count = 0
@@ -38,7 +38,7 @@ def keyword_frequency(keyword: str):
     count10 = 0
     count11 = 0
 
-    # frequencies are normalized based on the number of books published in each year
+    # Frequencies are normalized based on the number of books published in each year
     for key, value in frequency.items(): 
 
         if key == "2015":
@@ -80,9 +80,8 @@ def keyword_frequency(keyword: str):
     return line_kw
 
 
-
+# Plot
 dict_lines = {
-
 
     'pandemic': keyword_frequency("pandemic"),
     'covid': keyword_frequency("covid"),
