@@ -20,7 +20,7 @@ df = pd.read_csv("publications-asia.csv")
 titles = df.iloc[:, 0].astype(str).values
 descriptions = df.iloc[:, 1].astype(str).values
 
-# Encode descriptions
+# Generate embeddings for content summaries
 embeddings = model.encode(descriptions)
 
 # Clustering
