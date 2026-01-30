@@ -1,7 +1,6 @@
+# Save content summaries of publications from a txt file to a json file
 
 import json
-
-# Save content summaries of publications from a txt file to a json file
 
 books_dataset = []
 years = []
