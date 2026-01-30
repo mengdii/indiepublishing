@@ -1,4 +1,4 @@
-This repository is for the data and code for my MA thesis: Political resistance in independent publishing: analyzing independent publications using topic modeling and clustering. The methodological framework is situated in digital humanities approaches, using text analysis, clustering, and topic modeling to examine a dataset of over 1000 independent publications. 
+This repository is for the data and code of my MA thesis: Political resistance in independent publishing: analyzing independent publications using topic modeling and clustering. The methodological framework is situated in digital humanities approaches, using text analysis, clustering, and topic modeling to examine a dataset of over 1000 independent publications. 
 
 ## Research questions
 1. What are the common social and political themes among independent publications? What are the differences among geopolitical regions?
@@ -9,7 +9,7 @@ The findings suggest that while there is an overarching theme of using life expe
 
 ## Dataset
 Independent publications.csv and Independent publishers.csv:
-The main datasets comprise content summaries of publications and self-introductions of publishers, which were manually collected from the websites of independent publishers, PDF catalogs from independent publishers, and Instagram posts by independent publishers.
+The main datasets comprise content summaries of publications and self-introductions of publishers, which were manually collected from the websites of independent publishers, PDF catalogs from independent publishers, and Instagram posts by independent publishers. The dataset currently contains 1105 publications from 182 publishers. 
 
 ## Methods
 The methods used in this thesis include text analysis, clustering and topic modeling. During preprocessing, words in British English are converted to American English in unify_to_american_english.py. For topic modeling, the content summaries of all publications are stored in a .json file, where each publication is stored in a dictionary (in text_to_json.py). Other preprocessing steps for topic modeling include lowercasing, removing stopwords, numbers and punctuations, and tokenizing, which is done in topic_modeling.py.
