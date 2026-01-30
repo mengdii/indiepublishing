@@ -1,8 +1,7 @@
 
-
 import json
 
-# Save book description from a txt file to a json file
+# Save content summaries of publications from a txt file to a json file
 
 books_dataset = []
 years = []
@@ -17,12 +16,12 @@ with open("catalog_data_unified.txt") as new_file:
         line = line.replace("\u2019s", "")
         line = line.replace("\u201c", "")
         line = line.replace("\u201d", "")
-       
+
+        # Create a dictionary
         book = {}
         year = ""
 
         i = 0
-
         while i < len(line):
             i += 1
             if i == 4:
