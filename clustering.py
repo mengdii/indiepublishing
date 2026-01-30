@@ -1,6 +1,7 @@
+# Cluster publications from each region based on their content summaries (descriptions)
+# Following tutorial Understanding, Generating, and Visualizing Embeddings by Mike Levy (https://www.dataquest.io/blog/understanding-generating-and-visualizing-embeddings/)
 
 ! pip install sentence-transformers scikit-learn matplotlib numpy
-
 
 from sentence_transformers import SentenceTransformer
 from sklearn.decomposition import PCA
@@ -22,7 +23,7 @@ descriptions = df.iloc[:, 1].astype(str).values
 # Encode descriptions
 embeddings = model.encode(descriptions)
 
-# Clustering (on full embeddings, not PCA)
+# Clustering
 num_clusters = 4
 kmeans = KMeans(n_clusters=num_clusters, random_state=1)
 cluster_labels = kmeans.fit_predict(embeddings)
