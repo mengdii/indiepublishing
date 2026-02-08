@@ -74,12 +74,11 @@ def topics(dataset: str, topic_no: int, output_vis: str):
     lda_model = models.LdaModel(corpus, alpha='auto', num_topics = topic_no, id2word = dictionary)
 
     # Coherence
-    cm = CoherenceModel(model=lda_model, corpus=corpus, coherence='u_mass')
-    coherence = cm.get_coherence()
+    # cm = CoherenceModel(model=lda_model, corpus=corpus, coherence='u_mass')
+    # coherence = cm.get_coherence()
 
     for topic_id, topic_words in lda_model.print_topics():
         print(f'Topic {topic_id + 1}: {topic_words}')
-
 
     #print(f'Coherence: {coherence}')
 
@@ -106,6 +105,6 @@ lda = models.LdaModel.load('lda_model')
 dictionary = Dictionary.load('text_dictionary')
 tkn_doc = utils.simple_preprocess(text)
 doc_bow = dictionary.doc2bow(tkn_doc)
-doc_vec = lda[doc_bow]
+doc_vec = lda[doc_bow] # topic probability distribution for the document
 print(f'{doc_vec}')
 '''
