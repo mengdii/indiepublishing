@@ -27,21 +27,10 @@ embeddings = model.encode(descriptions)
 num_clusters = 4
 kmeans = KMeans(n_clusters=num_clusters, random_state=1)
 cluster_labels = kmeans.fit_predict(embeddings)
-#centroids = kmeans.cluster_centers_
-
-'''
-centroid_df = pd.DataFrame(
-    centroids,
-    index=[f"Cluster_{i}" for i in range(num_clusters)]
-)
-
-print(centroid_df.head())
-'''
 
 # Dimensionality reduction
 pca = PCA(n_components=2)
 embeddings_2d = pca.fit_transform(embeddings)
-# centroids_2d = pca.transform(centroids)
 
 # Plot
 plt.figure(figsize=(20, 16))
@@ -60,16 +49,6 @@ df["cluster"] = cluster_labels
 cluster_counts = df["cluster"].value_counts().sort_index()
 print(cluster_counts)
 
-'''
-plt.scatter(
-    centroids_2d[:, 0],
-    centroids_2d[:, 1],
-    c='black',
-    s=200,
-    marker='X',
-    label='Centroids'
-)
-'''
 
 # Publication titles
 for i, (x, y) in enumerate(embeddings_2d):
