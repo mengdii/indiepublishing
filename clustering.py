@@ -32,6 +32,11 @@ cluster_labels = kmeans.fit_predict(embeddings)
 pca = PCA(n_components=2)
 embeddings_2d = pca.fit_transform(embeddings)
 
+# Get number of publications in each cluster
+df["cluster"] = cluster_labels
+cluster_counts = df["cluster"].value_counts().sort_index()
+print(cluster_counts)
+
 # Plot
 plt.figure(figsize=(20, 16))
 
@@ -44,13 +49,7 @@ scatter = plt.scatter(
     alpha=0.90,
 )
 
-df["cluster"] = cluster_labels
-
-cluster_counts = df["cluster"].value_counts().sort_index()
-print(cluster_counts)
-
-
-# Publication titles
+# Include publication titles
 for i, (x, y) in enumerate(embeddings_2d):
     plt.text(
         x,
