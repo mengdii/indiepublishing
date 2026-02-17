@@ -1,5 +1,6 @@
 # Cluster publications from each region based on their content summaries (descriptions)
-# Following tutorial Understanding, Generating, and Visualizing Embeddings by Mike Levy (https://www.dataquest.io/blog/understanding-generating-and-visualizing-embeddings/)
+# Reference: 
+#     Understanding, Generating, and Visualizing Embeddings by Mike Levy (https://www.dataquest.io/blog/understanding-generating-and-visualizing-embeddings/)
 
 ! pip install sentence-transformers scikit-learn matplotlib numpy
 
