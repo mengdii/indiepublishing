@@ -1,4 +1,7 @@
-# Conduct topic modeling based on publication content summaries 
+# Conduct topic modeling based on publications' content summaries 
+# References: 
+#     https://github.com/NanGinger/Valio_news_propaganda
+#     https://stackoverflow.com/questions/42995073/displaying-topics-associated-with-a-document-query-in-gensim
 
 ! pip install gensim
 ! pip install pyLDAvis
@@ -40,7 +43,12 @@ def topics(dataset: str, topic_no: int, output_vis: str):
 
     stop_words = nltk.corpus.stopwords.words('english')
 
-    # Based on the dataset, added stopwords that are common concepts related to publishing, concepts related to format, concepts that are too frequent or generic, concepts that are too specific, and other irrelevant words
+    # Based on the dataset, added stopwords that are 
+    # common concepts related to publishing, 
+    # concepts related to format or genre, 
+    # concepts that are too frequent or generic, 
+    # concepts that are too specific, and other irrelevant words
+    
     new_stopwords = ['book','books','collection','collections','collective','publication','published','history','histories','social','culture','cultural','space','work','works','text','texts','stories','new','art','visual','archive','archives','archiving','publishing','concept','exhibition','contemporary','museum','research','essay','essays','words','image','form','forms','idea','ideas','graphic','design','poem','poems','poetry','written','writing','drawing','drawings','comics','photos','photographs','photography','photographic','photographers','practice','practices','process','narrative','concept','features','project','series','artist','artists','life','three','print','way','ways','point','various','sometimes','sometime','something','time','times','includes','world','people','includes','alongside','patterns','artistic','years','based','like','s','one','two','first','second','also','presents','many','make','takes','us','zdanevich','zaum','singapore','use','using','jim','year','well','day','offers','part','author','within','days','things','objects','farid','across','zine','others','tree','even','around','looks','beech','together','made','contains','brings','rather','making','table','could','another','aráuz','joey','archie','without','motutapu','ralph','paul','skagit','yet','de','marx','still','may','take','riis','including','genderfail','man','edition','images','issue','often','always','every','see','look','lara','would','find','banda','back','along','since','printed','chalayan','along','want','roma','red','delta','created','sohrab','different','become','found','place','create','must','experience','experiences','featuring','malay','body','explores','behind','much','english','four','nt','linhart','set','anita','alina','kristian','bora','san','msf','mcdonald','songwat','mau','lee','australia','luis','might']
     stop_words.extend(new_stopwords)
 
