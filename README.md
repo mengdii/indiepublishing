@@ -1,4 +1,17 @@
-This repository is for the data and code of my MA thesis: Political resistance in independent publishing: analyzing independent publications using topic modeling and clustering. The methodological framework is situated in digital humanities approaches, using text analysis, clustering, and topic modeling to examine a dataset of over 1000 independent publications. 
+This repository is for the data and code of my MA thesis: Political resistance in independent publishing: analyzing independent publications using topic modeling and clustering. The methodological framework is situated in digital humanities approaches, combining text analysis, clustering, topic modeling, and close reading to examine a dataset of over 1000 independent publications. 
+
+### Summary of files
+
+| File | Description |
+| --- | --- |
+| independentPublishers.csv | Dataset of independent publishers |
+| independentPublications.csv | Dataset of independent publications |
+| unifySpelling.py | Converts words in British English to American English |
+| createJson.py | Saves content summaries of publications from a txt file to a json file |
+| wordCloud.py | Generates word clouds based on top 50 frequent words of each region |
+| keywordFrequency.py | Finds out how keyword frequencies changed over time |
+| clustering.py | Clusters publications from each region based on their content summaries |
+| topicModeling.py | Conduct topic modeling based on publication content summaries  | 
 
 ### Research questions
 1. What are the common social and political themes among independent publications? What are the differences among geopolitical regions?
@@ -9,10 +22,10 @@ The findings suggest that while there is an overarching theme of using life expe
 
 ### Data
 independentPublications.csv and independentPublishers.csv:
-The main datasets comprise content summaries of publications and self-introductions of publishers, which were manually collected from the websites of independent publishers, PDF catalogs from independent publishers, and Instagram posts by independent publishers. The dataset currently contains 1105 publications from 182 publishers. 
+The main datasets comprise content summaries of publications and self-descriptions of publishers, which were manually collected from the websites of independent publishers, PDF catalogs from independent publishers, and Instagram posts by independent publishers. The dataset currently contains 1105 publications from 182 publishers. 
 
 ### Methods
-The methods used in this thesis include text analysis, clustering and topic modeling. During preprocessing, words in British English are converted to American English (unifySpelling.py). For topic modeling, the content summaries of all publications are stored in a .json file, where each publication is in a dictionary (createJson.py). Other preprocessing steps for topic modeling include lowercasing, removing stopwords, numbers and punctuations, and tokenizing, which is done in topicModeling.py.
+The methods used in this thesis include basic text analysis (frequencies, collocates, kwic), clustering and topic modeling. During preprocessing, words in British English are converted to American English (unifySpelling.py). For topic modeling, the content summaries of all publications are stored in a .json file, where each publication is in a dictionary (createJson.py). Other preprocessing steps for topic modeling include lowercasing, tokenizing, removing numbers and punctuations, and removing stopwords, which is done in topicModeling.py.
 
 wordCloud.py:
 Word frequencies are visualized based on the top 50 frequent words of each region.
