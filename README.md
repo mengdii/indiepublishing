@@ -1,17 +1,23 @@
-This repository is for the data and code of my MA thesis: Political resistance in independent publishing: analyzing independent publications using topic modeling and clustering. The methodological framework is situated in digital humanities approaches, combining text analysis, clustering, topic modeling, and close reading to examine a dataset of over 1000 independent publications. 
+This repository is for the code of my MA thesis: Political Resistance in Global Independent Publishing: A Digital Humanities Analysis. 
+Leveraging Digital Humanities approaches, this study identifies patterns in the political and social themes of contemporary independent publications and their geopolitical differences. It also emphasizes the subtle practices and roles of independent publishers in driving political resistance and social change. The dataset contains the content summaries of 1105 publications from 182 independent publishers worldwide.  
 
 ### Summary of files
 
 | File | Description |
 | --- | --- |
-| independentPublishers.csv | Dataset of independent publishers |
-| independentPublications.csv | Dataset of independent publications |
 | unifySpelling.py | Converts words in British English to American English |
 | createJson.py | Saves content summaries of publications from a txt file to a json file |
 | wordCloud.py | Generates word clouds based on top 50 frequent words of each region |
 | keywordFrequency.py | Finds out how keyword frequencies changed over time |
 | clustering.py | Clusters publications from each region based on their content summaries |
 | topicModeling.py | Conduct topic modeling based on publication content summaries  | 
+
+Datasets are stored in Zenodo: https://doi.org/10.5281/zenodo.18885615
+
+| Dataset | Description |
+| --- | --- |
+| independentPublishers.csv | Dataset of independent publishers |
+| independentPublications.csv | Dataset of independent publications |
 
 ### Research questions
 1. What are the common social and political themes among independent publications? What are the differences among geopolitical regions?
