@@ -10,7 +10,7 @@ Leveraging Digital Humanities approaches, this study identifies patterns in the 
 | wordCloud.py | Generates word clouds based on top 50 frequent words of each region |
 | keywordFrequency.py | Finds out how keyword frequencies changed over time |
 | clustering.py | Clusters publications from each region based on their content summaries |
-| topicModeling.py | Conduct topic modeling based on publication content summaries  | 
+| topicModeling.py | Conducts topic modeling based on publication content summaries  | 
 
 Datasets are stored in Zenodo: https://doi.org/10.5281/zenodo.18885615
 
